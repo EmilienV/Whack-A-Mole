@@ -16,26 +16,30 @@ function randomHole(holes) {
   lastHole = hole;
   return hole;
 }
-function peep() {
+function classChanger() {
   const time = randomTime(200, 1000);
   const hole = randomHole(holes);
   hole.classList.add("up");
+  const mole = hole.querySelector(".mole");
+  mole.classList.add("up");
   setTimeout(() => {
-    hole.classList.remove("up");
-    if (!timeUp) peep();
+    mole.classList.remove("up");
+    if (!timeUp) classChanger();
   }, time);
 }
 function startGame() {
   scoreBoard.textContent = 0;
   timeUp = false;
   score = 0;
-  peep();
+  classChanger();
   setTimeout(() => (timeUp = true), 10000);
 }
-function whack(e) {
+function addScore(e) {
   if (!e.isTrusted) return;
   score++;
   this.parentNode.classList.remove("up");
   scoreBoard.textContent = score;
 }
-moles.forEach((mole) => mole.addEventListener("click", whack));
+moles.forEach((mole) =>
+  mole.addEventListener("click", addScore, { once: true })
+);
