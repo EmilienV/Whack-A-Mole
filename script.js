@@ -21,9 +21,13 @@ function classChanger() {
   const hole = randomHole(holes);
   hole.classList.add("up");
   const mole = hole.querySelector(".mole");
+  mole.removeEventListener("click", addScore);
+
   mole.classList.add("up");
   setTimeout(() => {
     mole.classList.remove("up");
+    mole.addEventListener("click", addScore, { once: true });
+
     if (!timeUp) classChanger();
   }, time);
 }
