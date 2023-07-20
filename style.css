@@ -1,0 +1,54 @@
+@import url(reset.css);
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  background-color: #f3e6e8;
+}
+html:before, html:after {
+  box-sizing: inherit;
+}
+html .start {
+  text-align: center;
+  padding-bottom: 50px;
+}
+html h1,
+html h3 {
+  text-align: center;
+  font-size: 5rem;
+  margin-bottom: 0;
+}
+html .score {
+  color: rgb(104, 94, 114);
+  margin-top: 0%;
+}
+html .container_mole {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+html .container_mole .hole {
+  flex: 1 0 33.33%;
+  background-color: red;
+  border-radius: 50%;
+}
+html .container_mole .hole:after {
+  display: block;
+  width: 100%;
+  height: 70px;
+}
+html .container_mole .mole {
+  border-radius: 50%;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+}
+html button {
+  background: rgba(190, 19, 19, 0.2);
+  font-size: 3rem;
+  cursor: pointer;
+}
+html .up {
+  background-color: #964b00;
+}/*# sourceMappingURL=style.css.map */
